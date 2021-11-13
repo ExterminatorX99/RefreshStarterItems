@@ -1,39 +1,37 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Default;
 
-namespace RefreshStarterItems
+namespace RefreshStarterItems;
+
+public class RefreshBag : StartBag
 {
-	public class RefreshBag : StartBag
+	public static FieldInfo itemsField = typeof(StartBag).GetField("items", BindingFlags.NonPublic | BindingFlags.Instance);
+
+	public override string Texture => "ModLoader/StartBag";
+
+	public override void SetStaticDefaults()
 	{
-		public static FieldInfo itemsField = typeof(StartBag).GetField("items", BindingFlags.NonPublic | BindingFlags.Instance);
+		DisplayName.SetDefault("{$tModLoader.StartBagItemName}");
+		Tooltip.SetDefault("Contains starter items\n{$CommonItemTooltip.RightClickToOpen}");
+	}
 
-		public List<Item> GetItems() => (List<Item>) itemsField.GetValue(this);
+	public override void RightClick(Player player)
+	{
+		List<Item> startingItems = PlayerLoader.GetStartingItems(player, Enumerable.Empty<Item>());
+		itemsField.SetValue(this, startingItems);
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("{$tModLoader.StartBagItemName}");
-			Tooltip.SetDefault("Contains starter items\n{$CommonItemTooltip.RightClickToOpen}");
-		}
+		base.RightClick(player);
+	}
 
-		public override void RightClick(Player player)
-		{
-			List<Item> items = GetItems();
-			items.Clear();
-			items.AddRange(PlayerHooks.SetupStartInventory(player));
-
-			base.RightClick(player);
-		}
-
-		public override void AddRecipes()
-		{
-			var recipe = new ModRecipe(mod);
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(ModContent.ItemType<RefreshBag>());
-			recipe.AddRecipe();
-		}
+	public override void AddRecipes()
+	{
+		CreateRecipe()
+			.AddTile(TileID.DemonAltar)
+			.Register();
 	}
 }

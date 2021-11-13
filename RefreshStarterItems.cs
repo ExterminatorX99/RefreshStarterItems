@@ -1,8 +1,7 @@
 using Terraria.ModLoader;
 
-namespace RefreshStarterItems
+namespace RefreshStarterItems;
+
+public class RefreshStarterItems : Mod
 {
-	public class RefreshStarterItems : Mod
-	{
-	}
 }

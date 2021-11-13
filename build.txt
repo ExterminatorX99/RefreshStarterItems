@@ -1,3 +1,4 @@
 displayName = Refresh Starter Items
 author = Exterminator
-version = 0.1
+version = 1.0
+includeSource = true

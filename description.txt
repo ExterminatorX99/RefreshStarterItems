@@ -1,1 +1,5 @@
-Refresh Starter Items is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Adds a bag that contains the items you get when you create your player character.
+
+Useful when adding a mod to an already started playthrough and you don't want to create a new character to get the mod's starting items or if you lost one of the starting items or want another one of it.
+
+Crafted at a Demon/Crimson Altar.

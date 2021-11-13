@@ -1,0 +1,3 @@
+displayName = Refresh Starter Items
+author = Exterminator
+version = 0.1

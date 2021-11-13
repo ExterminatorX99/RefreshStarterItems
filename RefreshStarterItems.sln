@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefreshStarterItems", "RefreshStarterItems.csproj", "{D268E783-8C01-4807-8971-BA18970A441C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D268E783-8C01-4807-8971-BA18970A441C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D268E783-8C01-4807-8971-BA18970A441C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D268E783-8C01-4807-8971-BA18970A441C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D268E783-8C01-4807-8971-BA18970A441C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D0CE94B-1831-4F88-A1EB-2D4FF39432C6}
+	EndGlobalSection
+EndGlobal
